@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+    font-size: 5.5em;
+    margin: 25px 0 10px 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+    margin: 0 12.5%;
+    line-height: 150%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.divider {
+    margin: 0px 7.5% 25px 7.5%;
+    background-color: blue;
+    height: 5px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 25px 7.5%;
+}
+
+.col {
+    flex-grow: 1;
+    flex-basis: 33%;
+}
+
+.col > h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+}
+
+.sample {
+    width: 300px;
+}
+
+.wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0px;
+    font-size: 2em;
+    padding: 10px 15px;
+}
