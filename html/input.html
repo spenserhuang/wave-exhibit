@@ -13,8 +13,8 @@
 
     <script>
 
-      // register a callback function with the TopCode library
-      TopCodes.setVideoFrameCallback("video-canvas", function(jsonString) {
+        // register a callback function with the TopCode library
+        TopCodes.setVideoFrameCallback("video-canvas", function(jsonString) {
 
         // convert the JSON string to an object
         var json = JSON.parse(jsonString);
@@ -28,12 +28,12 @@
         // draw a circle over the top of each TopCode
         ctx.fillStyle = "rgba(255, 0, 0, 0.3)";   // very translucent red
         for (i=0; i<topcodes.length; i++) {
-          ctx.beginPath();
-          ctx.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
-          ctx.fill();
-      }
-    });
-  </script>
+                ctx.beginPath();
+                ctx.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
+                ctx.fill();
+            }
+        });
+    </script>
 </body>
 </html>
 
