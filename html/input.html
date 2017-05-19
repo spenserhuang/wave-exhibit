@@ -35,25 +35,27 @@
         ctx.fillStyle = "rgba(255, 0, 0, 0.3)";   // very translucent red
         for (i=0; i<topcodes.length; i++) {
             for (j=0; j<topcodes.length; j++) {
-                    ctx.beginPath();
-                    ctx.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
-                    ctx.fill();
                     if (topcodes[i].code == 55 && topcodes[j].code == 31) {
-                        console.log(topcodes[j].y - topcodes[i].y);
-                        verticalDistance = topcodes[j].y - topcodes[i].y;
+                        ctx.beginPath();
+                        ctx.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
+                        ctx.arc(topcodes[j].x, topcodes[j].y, topcodes[j].radius, 0, Math.PI*2, true);
+                        ctx.fill();
+                        console.log(Math.abs(topcodes[j].y - topcodes[i].y));
+                        verticalDistance = Math.abs(topcodes[j].y - topcodes[i].y);
                     }
                 }
             }
         
-        ctx2.fillStyle = "rgba(0, 255, 0, 0.3)";   // very translucent red
+        ctx2.fillStyle = "rgba(0, 255, 0, 0.3)";   // very translucent green
         for (i=0; i<topcodes.length; i++) {
             for (j=0; j<topcodes.length; j++) {
-                    ctx2.beginPath();
-                    ctx2.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
-                    ctx2.fill();
                     if (topcodes[i].code == 87 && topcodes[j].code == 47) {
-                        console.log(topcodes[j].x - topcodes[i].x);
-                        horizontalDistance = topcodes[j].x - topcodes[i].x;
+                        ctx2.beginPath();
+                        ctx2.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
+                        ctx2.arc(topcodes[j].x, topcodes[j].y, topcodes[j].radius, 0, Math.PI*2, true);
+                        ctx2.fill();
+                        console.log(Math.abs(topcodes[j].x - topcodes[i].x));
+                        horizontalDistance = Math.abs(topcodes[j].x - topcodes[i].x);
                     }
                 }
             }
