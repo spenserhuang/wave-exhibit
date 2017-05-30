@@ -10,19 +10,30 @@
 
 <body>
     <h1>Set Your Wave</h1>
-    <div id="instructions">
+    <div id="instructions" class="content">
         <h2>Instructions</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>According to the National Ocean Service, a tidal wave is defined as a “shallow water wave caused by the gravitational interactions between the Sun, Moon, and Earth.” Tidal waves (or tides) specifically refer to the waves that are caused by the gravitational pulls of the sun and the moon. Colloquially, tsunamis are referred to as tidal waves; however, this is incorrect as tsunamis are caused by tectonic activity, underwater earthquakes, or even landslides. The sudden upward or downward movement of the seafloor during such earthquakes create large tsunami waves as large amounts of energy is suddenly released into the water, displacing huge amounts of water.</p>
     </div>
-    <div id="canvas-container">
-        <canvas id="video-canvas" width="700" height="500" style="background: #212121;"></canvas>
-        <button id="camera-button" onclick="TopCodes.startStopVideoScan('video-canvas')">Start / Stop</button>
+    <div id="canvas-container" class="content">
+        <canvas id="video-canvas" width="650" height="500" style="background: #212121;"></canvas>
+    </div>
 
-    </div>
-    <div id="set-wave">
-        <h2>Type of Wave</h2>
-        <h3>Tsunami Wave</h3>
-        <h3>Tidal Wave</h3>
+    <div id="set-wave" class="content">
+        <h2>Set the Wavelength & Amplitude of Your Wave</h2>
+        <button id="camera-button" onclick="TopCodes.startStopVideoScan('video-canvas')">Start / Stop</button>
+        <br>
+        <br>
+        <br>
+        <h2>Choose Your Wave</h2>
+        <select>
+          <option value="tsunami">Tsunami Wave</option>
+          <option value="tidal">Tidal Wave</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <a href="measure.html">
             <div class="wrapper">
                 <button>
@@ -31,6 +42,8 @@
             </div>
         </a>
     </div>
+
+
 
 
 
