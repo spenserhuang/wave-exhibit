@@ -1,15 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="../css/explain.css">
-        <script type='text/javascript' src='../js/persist-min.js'></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <title>Spenser Huang</title>
-    </head>
+.wrapper {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
 
-    <body>
+button {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0px;
+    font-size: 1em;
+    padding: 10px 15px;
+}
 
-    </body>
-</html>
+#go {
+    font-size: 2em;
+}
+
+.pg-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.row {
+    flex-grow: 1;
+    flex-basis: 49.5%;
+    height: 100vh;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin: 20px 10%;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 450px;
+    height: 280px;
+}

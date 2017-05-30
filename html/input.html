@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/input.css">
     <script type='text/javascript' src='../js/persist-min.js'></script>
+    <script type='text/javascript' src='../js/topcodes.js'></script>
     <script type='text/javascript' src='../js/store.js'></script>
 </head>
 
@@ -45,9 +46,6 @@
 
 
 
-
-
-
     <script src="../js/topcodes.js"></script>
 
     <script>
@@ -68,7 +66,6 @@
         var verticalDistance = 0;
         var horizontalDistance = 0;
 
-
         // draw a circle over the top of each TopCode
         ctx.fillStyle = "rgba(255, 0, 0, 0.3)";   // very translucent red
         for (i=0; i<topcodes.length; i++) {
@@ -80,7 +77,7 @@
                         ctx.fill();
                         console.log(Math.abs(topcodes[j].y - topcodes[i].y));
                         verticalDistance = Math.abs(topcodes[j].y - topcodes[i].y);
-                        VERDISTANCE = Math.abs(topcodes[j].y - topcodes[i].y);
+                        store.set('vert', verticalDistance.toString());
                     }
                 }
             }
@@ -88,14 +85,14 @@
         ctx2.fillStyle = "rgba(0, 255, 0, 0.3)";   // very translucent green
         for (i=0; i<topcodes.length; i++) {
             for (j=0; j<topcodes.length; j++) {
-                    if (topcodes[i].code == 87 && topcodes[j].code == 47) {
+                    if (topcodes[i].code == 79 && topcodes[j].code == 93) {
                         ctx2.beginPath();
                         ctx2.arc(topcodes[i].x, topcodes[i].y, topcodes[i].radius, 0, Math.PI*2, true);
                         ctx2.arc(topcodes[j].x, topcodes[j].y, topcodes[j].radius, 0, Math.PI*2, true);
                         ctx2.fill();
                         console.log(Math.abs(topcodes[j].x - topcodes[i].x));
                         horizontalDistance = Math.abs(topcodes[j].x - topcodes[i].x);
-                        HORDISTANCE = Math.abs(topcodes[j].y - topcodes[i].y);
+                        store.set('hori', horizontalDistance.toString());
                     }
                 }
             }

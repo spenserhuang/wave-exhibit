@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="../css/measure.css">
         <script type='text/javascript' src='../js/persist-min.js'></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src='../js/store.js'></script>
+
         <title>Spenser Huang</title>
     </head>
 
@@ -16,11 +18,12 @@
                 <div class="overlay"></div>
             </div>
             <div class="col">
-                <p id="demo"></p>
 
                 <h1>Flexiforce Measure = 4.3</h1>
                 <h1>Amplitude = 3.2m</h1>
+                <h1 id="vertical-distance"></h1>
                 <h1>Wavelength = 2.5Hz</h1>
+                <h1 id="horizontal-distance"></h1>
                 <div class="divider"></div>
                 <h1>Real Life Example = "A wave this high will be taller than Shaq"</h1>
                 <button>Try Again</button>
@@ -28,7 +31,11 @@
 
         </div>
     <script>
-        document.getElementById("demo").innerHTML = 445 + 21;
+        var vert = store.get('vert');
+        var hori = store.get('hori');
+
+        document.getElementById("vertical-distance").innerHTML = vert;
+        document.getElementById("horizontal-distance").innerHTML = hori;
     </script>
     </body>
 </html>
