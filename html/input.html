@@ -2,17 +2,42 @@
 <html>
 <head>
     <title>TopCodes Example</title>
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/input.css">
+    <script type='text/javascript' src='../js/persist-min.js'></script>
+    <script type='text/javascript' src='../js/store.js'></script>
 </head>
 
 <body>
-    <canvas id="video-canvas" width="800" height="600" style="background: #ddd;"></canvas>
-    <br/>
-    <button id="camera-button" onclick="TopCodes.startStopVideoScan('video-canvas')">Start / Stop</button>
+    <h1>Set Your Wave</h1>
+    <div id="instructions">
+        <h2>Instructions</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="canvas-container">
+        <canvas id="video-canvas" width="700" height="500" style="background: #212121;"></canvas>
+        <button id="camera-button" onclick="TopCodes.startStopVideoScan('video-canvas')">Start / Stop</button>
+
+    </div>
+    <div id="set-wave">
+        <h2>Type of Wave</h2>
+        <h3>Tsunami Wave</h3>
+        <h3>Tidal Wave</h3>
+        <a href="measure.html">
+            <div class="wrapper">
+                <button>
+                    Let's Go!
+                </button>
+            </div>
+        </a>
+    </div>
+
+
+
 
     <script src="../js/topcodes.js"></script>
 
     <script>
-
         // register a callback function with the TopCode library
         TopCodes.setVideoFrameCallback("video-canvas", function(jsonString) {
 
@@ -42,10 +67,11 @@
                         ctx.fill();
                         console.log(Math.abs(topcodes[j].y - topcodes[i].y));
                         verticalDistance = Math.abs(topcodes[j].y - topcodes[i].y);
+                        VERDISTANCE = Math.abs(topcodes[j].y - topcodes[i].y);
                     }
                 }
             }
-        
+
         ctx2.fillStyle = "rgba(0, 255, 0, 0.3)";   // very translucent green
         for (i=0; i<topcodes.length; i++) {
             for (j=0; j<topcodes.length; j++) {
@@ -56,6 +82,7 @@
                         ctx2.fill();
                         console.log(Math.abs(topcodes[j].x - topcodes[i].x));
                         horizontalDistance = Math.abs(topcodes[j].x - topcodes[i].x);
+                        HORDISTANCE = Math.abs(topcodes[j].y - topcodes[i].y);
                     }
                 }
             }
