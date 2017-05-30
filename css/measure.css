@@ -33,7 +33,19 @@ h1 {
     line-height: 200%;
 }
 
-.divider {
-    height: 100px;
+.wrapper {
+    margin: 20px 12.5%;
+
 }
 
+button {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0px;
+    font-size: 1em;
+    padding: 10px 15px;
+}
+
+#go {
+    font-size: 2em;
+}

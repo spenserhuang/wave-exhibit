@@ -18,24 +18,34 @@
                 <div class="overlay"></div>
             </div>
             <div class="col">
-
-                <h1>Flexiforce Measure = 4.3</h1>
-                <h1>Amplitude = 3.2m</h1>
+                <h1>Amplitude:</h1>
                 <h1 id="vertical-distance"></h1>
-                <h1>Wavelength = 2.5Hz</h1>
+                <h1>Wavelength:</h1>
                 <h1 id="horizontal-distance"></h1>
-                <div class="divider"></div>
-                <h1>Real Life Example = "A wave this high will be taller than Shaq"</h1>
-                <button>Try Again</button>
+                <h1 id="comparisons">Real Life Example = "A wave this high will be taller than Shaq"</h1>
+                <a href="index.html">
+                    <div class="wrapper">
+                        <button id="home">
+                            Try Again
+                        </button>
+                    </div>
+                </a>
             </div>
-
         </div>
     <script>
         var vert = store.get('vert');
         var hori = store.get('hori');
 
-        document.getElementById("vertical-distance").innerHTML = vert;
-        document.getElementById("horizontal-distance").innerHTML = hori;
+        document.getElementById("vertical-distance").innerHTML = vert + " m";
+        document.getElementById("horizontal-distance").innerHTML = hori + " Hz";
+
+        if (vert < 300) {
+            document.getElementById("comparisons").innerHTML = "This wave is not bad";
+        };
+
+        if (vert > 300) {
+            document.getElementById("comparisons").innerHTML = "This is a fucking massive wave";
+        };
     </script>
     </body>
 </html>
