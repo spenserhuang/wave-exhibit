@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+    font-size: 5.5em;
+    margin: 25px 0 10px 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+}
+
+.content {
+    margin-top: 0;
+}
+
+#instructions {
+    position: absolute;
+    left: 50px;
+    width: 20%;
+
+}
+
+canvas {
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+
+#set-wave {
+    position: absolute;
+    right: 50px;
+    width: 20%;
+}
+
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0px;
+    font-size: 1em;
+    padding: 10px 15px;
+}
+
+#go {
+    font-size: 2em;
+}
