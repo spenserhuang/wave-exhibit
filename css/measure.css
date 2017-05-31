@@ -24,10 +24,14 @@ h1, h3 {
 }
 
 img {
-    width: 50%;
+    width: 1120px;
     height: 100%;
     z-index: 1;
     position: absolute;
+}
+
+#col2 {
+    z-index: 100;
 }
 
 .overlay {

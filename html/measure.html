@@ -17,11 +17,11 @@
     <body>
         <div class="pg-grid">
             <div class="col">
-                <h1 id="wave-height">Your Wave is This High</h1>
-                <img src="../images/human.jpg">
+                <h1 id="wave-height"></h1>
+                <img src="../images/scale1.jpg">
                 <div class="overlay"></div>
             </div>
-            <div class="col">
+            <div class="col" id="col2">
                 <h3>Type of Wave: <span id="wave-type"></span></h3>
                 <h3>Amplitude: <span id="vertical-distance"></span></h3>
                 <h3>Wavelength: <span id="horizontal-distance"></span></h3>
@@ -92,13 +92,13 @@
         var hori = store.get('hori');
         var type = store.get('type');
 
-        document.getElementById("run-amp").innerHTML = vert + " m";
+        document.getElementById("run-amp").innerHTML = vert / 2+ " m";
 
-        document.getElementById("run-len").innerHTML = hori + " Hz";
+        document.getElementById("run-len").innerHTML = hori + " m";
 
         document.getElementById("wave-type").innerHTML = type + " Wave";
-        document.getElementById("vertical-distance").innerHTML = vert + " m";
-        document.getElementById("horizontal-distance").innerHTML = hori + " Hz";
+        document.getElementById("vertical-distance").innerHTML = vert / 2 + " m";
+        document.getElementById("horizontal-distance").innerHTML = hori + " m";
 
         $(".overlay").css("height", vert * 2);
 

@@ -124,8 +124,8 @@
                     }
                 }
 
-          document.getElementById("amplitude").innerHTML = verticalDistance + "m";
-          document.getElementById("wavelength").innerHTML = horizontalDistance + "Hz";
+          document.getElementById("amplitude").innerHTML = verticalDistance / 2 + "m";
+          document.getElementById("wavelength").innerHTML = horizontalDistance + "m";
           typeOfWave = $('#wave-type').val();
           store.set('type', typeOfWave);
           console.log(typeOfWave);
