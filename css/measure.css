@@ -12,7 +12,7 @@
     z-index: 120;
 }
 
-h1 {
+h1, h3 {
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ img {
 }
 
 .overlay {
-    background-color: blue;
+    background-color: #2196F3;
     /*height: 200px;*/
     opacity: 0.3;
     width: 50%;
@@ -45,32 +45,47 @@ h1 {
     line-height: 200%;
 }
 
-.wrapper {
-    margin: 20px 12.5%;
+table {
     text-align: center;
-
-}
-
-button {
-    background-color: white;
     border: 1px solid black;
-    margin: 0px;
-    font-size: 1em;
-    padding: 10px 15px;
+    margin: auto;
 }
 
-#home {
-    font-size: 2em;
+tr {
+    text-align: center;
+    border: 1px solid black;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
 }
 
 #sine-waves {
     position: absolute;
     top: 485px;
+    z-index: 50;
 }
 
 #waves {
     height: 240px;
-    background-color: #ccc;
+    background-color: #2196F3;
+    z-index: 50;
+}
+
+.wrapper {
+    margin: 20px 12.5%;
+    text-align: center;
+    z-index: 150;
+}
+
+.home {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 10px 15px;
+    font-size: 1.4em;
+    z-index: 150;
 }
 
 #amplitude-tag {

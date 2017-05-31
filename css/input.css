@@ -11,6 +11,7 @@ h1 {
 }
 
 #instructions {
+    z-index: 100;
     position: absolute;
     left: 50px;
     width: 20%;
@@ -28,6 +29,7 @@ canvas {
     position: absolute;
     right: 50px;
     width: 20%;
+    z-index: 100;
 }
 
 
@@ -47,11 +49,13 @@ button {
 #sine-waves {
     position: absolute;
     top: 485px;
+    z-index: 50;
 }
 
 #waves {
     height: 240px;
-    background-color: #ccc;
+    background-color: #2196F3;
+    z-index: 50;
 }
 
 #amplitude-tag {
