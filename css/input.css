@@ -53,3 +53,20 @@ button {
     height: 240px;
     background-color: #ccc;
 }
+
+#amplitude-tag {
+    position: absolute;
+    z-index: 150;
+    top: 90px;
+    left: 10px;
+}
+
+#wavelength-tag {
+    position: absolute;
+    margin: auto;
+    left: 650px;
+    right: 0;
+    top: 210px;
+    color: #000;
+    z-index: 150;
+}

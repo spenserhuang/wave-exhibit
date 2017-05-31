@@ -1,5 +1,10 @@
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
+
+/* CUSTOM CSS */
+
+
+
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Correct the line height in all browsers.
@@ -11,10 +16,18 @@
 ========================================================================== */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: 'Raleway', sans-serif;
   line-height: 1.15; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
 }
 
 /* Sections
@@ -254,7 +267,7 @@ sup {
  optgroup,
  select,
  textarea {
-  font-family: sans-serif; /* 1 */
+  font-family: 'Raleway', sans-serif;
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */

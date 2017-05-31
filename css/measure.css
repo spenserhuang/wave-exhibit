@@ -7,12 +7,20 @@
     height: 100vh;
 }
 
+#wave-height {
+    position: absolute;
+    z-index: 120;
+}
+
+h1 {
+    text-align: center;
+}
+
 .col {
     padding: 0;
     text-align: left;
     flex-grow: 1;
     flex-basis: 49%;
-    border: 1px solid black;
 }
 
 img {
@@ -39,6 +47,7 @@ h1 {
 
 .wrapper {
     margin: 20px 12.5%;
+    text-align: center;
 
 }
 
@@ -50,7 +59,7 @@ button {
     padding: 10px 15px;
 }
 
-#go {
+#home {
     font-size: 2em;
 }
 
@@ -62,4 +71,21 @@ button {
 #waves {
     height: 240px;
     background-color: #ccc;
+}
+
+#amplitude-tag {
+    position: absolute;
+    z-index: 150;
+    top: 90px;
+    left: 10px;
+}
+
+#wavelength-tag {
+    position: absolute;
+    margin: auto;
+    left: 320px;
+    right: 0;
+    top: 210px;
+    color: #000;
+    z-index: 150;
 }

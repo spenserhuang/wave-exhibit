@@ -38,7 +38,9 @@ h1 {
 }
 
 p {
+    line-height: 150%;
     margin: 20px 10%;
+    text-indent: 25px
 }
 
 iframe {
@@ -46,5 +48,5 @@ iframe {
     margin: 0 auto;
     margin-top: 30px;
     width: 450px;
-    height: 280px;
+    height: 260px;
 }

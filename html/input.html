@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TopCodes Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/input.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -10,13 +11,34 @@
     <script type='text/javascript' src='../js/topcodes.js'></script>
     <script type='text/javascript' src='../js/store.js'></script>
     <script type='text/javascript' src='../js/input-wave.js'></script>
+    <title>TopCodes Example</title>
 </head>
 
 <body>
     <h1>Set Your Wave</h1>
     <div id="instructions" class="content">
         <h2>Instructions</h2>
-        <p>According to the National Ocean Service, a tidal wave is defined as a “shallow water wave caused by the gravitational interactions between the Sun, Moon, and Earth.” Tidal waves (or tides) specifically refer to the waves that are caused by the gravitational pulls of the sun and the moon. Colloquially, tsunamis are referred to as tidal waves; however, this is incorrect as tsunamis are caused by tectonic activity, underwater earthquakes, or even landslides. The sudden upward or downward movement of the seafloor during such earthquakes create large tsunami waves as large amounts of energy is suddenly released into the water, displacing huge amounts of water.</p>
+        <p>
+            1. Set your amplitude (vertical lever)
+        </p>
+        <p>
+            2. Set your wavelength (horizontal lever)
+        </p>
+        <p>
+            3. Click "Start" and register settings with the camera
+        </p>
+        <p>
+            4. Adjust amplitude or wavelength
+        </p>
+        <p>
+            5. Choose the type of wave
+        </p>
+        <p>
+            6. Click "Let's Go!"
+        </p>
+        <p>
+            7. Watch and learn!
+        </p>
     </div>
     <div id="canvas-container" class="content">
         <canvas id="video-canvas" width="650" height="400" style="background: #212121;"></canvas>
@@ -48,6 +70,8 @@
 
     <div id="sine-waves">
         <canvas id="waves"></canvas>
+        <h3 id="amplitude-tag">Amplitude</h3>
+        <h3 id="wavelength-tag">Wavelength</h3>
     </div>
 
     <script src="../js/topcodes.js"></script>
@@ -124,8 +148,8 @@
               {
                 timeModifier: 1,
                 lineWidth: 5,
-                amplitude: verticalDistance,
-                wavelength: horizontalDistance,
+                amplitude: verticalDistance / 2,
+                wavelength: horizontalDistance / 2,
                 segmentLength: 1,
                 // strokeStyle: 'rgba(255, 255, 255, 0.5)'
               }
