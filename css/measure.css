@@ -16,16 +16,20 @@
 }
 
 img {
-    width: 100%;
+    width: 50%;
     height: 100%;
     z-index: 1;
+    position: absolute;
 }
 
 .overlay {
     background-color: blue;
-    height: 100px;
-    z-index: 10;
-    position: fixed;
+    /*height: 200px;*/
+    opacity: 0.3;
+    width: 50%;
+    z-index: 100;
+    bottom: 0;
+    position: absolute;
 }
 
 h1 {
@@ -48,4 +52,14 @@ button {
 
 #go {
     font-size: 2em;
+}
+
+#sine-waves {
+    position: absolute;
+    top: 485px;
+}
+
+#waves {
+    height: 240px;
+    background-color: #ccc;
 }

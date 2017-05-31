@@ -4,9 +4,12 @@
     <title>TopCodes Example</title>
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/input.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type='text/javascript' src='../js/persist-min.js'></script>
+    <script type='text/javascript' src='../js/sine-waves.js'></script>
     <script type='text/javascript' src='../js/topcodes.js'></script>
     <script type='text/javascript' src='../js/store.js'></script>
+    <script type='text/javascript' src='../js/input-wave.js'></script>
 </head>
 
 <body>
@@ -16,22 +19,21 @@
         <p>According to the National Ocean Service, a tidal wave is defined as a “shallow water wave caused by the gravitational interactions between the Sun, Moon, and Earth.” Tidal waves (or tides) specifically refer to the waves that are caused by the gravitational pulls of the sun and the moon. Colloquially, tsunamis are referred to as tidal waves; however, this is incorrect as tsunamis are caused by tectonic activity, underwater earthquakes, or even landslides. The sudden upward or downward movement of the seafloor during such earthquakes create large tsunami waves as large amounts of energy is suddenly released into the water, displacing huge amounts of water.</p>
     </div>
     <div id="canvas-container" class="content">
-        <canvas id="video-canvas" width="650" height="500" style="background: #212121;"></canvas>
+        <canvas id="video-canvas" width="650" height="400" style="background: #212121;"></canvas>
     </div>
 
     <div id="set-wave" class="content">
         <h2>Set the Wavelength & Amplitude of Your Wave</h2>
+        <h3>Amplitude is: <span id="amplitude"></span></h3>
+        <h3>Wavelength is: <span id="wavelength"></span></h3>
         <button id="camera-button" onclick="TopCodes.startStopVideoScan('video-canvas')">Start / Stop</button>
         <br>
         <br>
-        <br>
         <h2>Choose Your Wave</h2>
-        <select>
-          <option value="tsunami">Tsunami Wave</option>
-          <option value="tidal">Tidal Wave</option>
+        <select id="wave-type">
+          <option value="Tsunami">Tsunami Wave</option>
+          <option value="Tidal">Tidal Wave</option>
         </select>
-        <br>
-        <br>
         <br>
         <br>
         <br>
@@ -44,11 +46,17 @@
         </a>
     </div>
 
-
+    <div id="sine-waves">
+        <canvas id="waves"></canvas>
+    </div>
 
     <script src="../js/topcodes.js"></script>
 
     <script>
+        var verticalDistance = 0;
+        var horizontalDistance = 0;
+        var typeOfWave;
+
         // register a callback function with the TopCode library
         TopCodes.setVideoFrameCallback("video-canvas", function(jsonString) {
 
@@ -61,10 +69,6 @@
         // obtain a drawing context from the <canvas>
         var ctx = document.querySelector("#video-canvas").getContext('2d');
         var ctx2 = document.querySelector("#video-canvas").getContext('2d');
-
-
-        var verticalDistance = 0;
-        var horizontalDistance = 0;
 
         // draw a circle over the top of each TopCode
         ctx.fillStyle = "rgba(255, 0, 0, 0.3)";   // very translucent red
@@ -95,6 +99,60 @@
                         store.set('hori', horizontalDistance.toString());
                     }
                 }
+
+          document.getElementById("amplitude").innerHTML = verticalDistance + "m";
+          document.getElementById("wavelength").innerHTML = horizontalDistance + "Hz";
+          typeOfWave = $('#wave-type').val();
+          store.set('type', typeOfWave);
+          console.log(typeOfWave);
+
+        $(function(){
+          var waves = new SineWaves({
+            el: document.getElementById('waves'),
+
+            speed: 50,
+
+            width: function() {
+              return $(window).width();
+            },
+
+            wavesWidth: '100%',
+
+            ease: 'Linear',
+
+            waves: [
+              {
+                timeModifier: 1,
+                lineWidth: 5,
+                amplitude: verticalDistance,
+                wavelength: horizontalDistance,
+                segmentLength: 1,
+                // strokeStyle: 'rgba(255, 255, 255, 0.5)'
+              }
+            ],
+
+            initialize: function (){
+
+            },
+
+            resizeEvent: function() {
+              var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0);
+              gradient.addColorStop(0.5,"rgba(255, 255, 255, 0.5)");
+
+              var index = -1;
+              var length = this.waves.length;
+                while(++index < length){
+                this.waves[index].strokeStyle = gradient;
+              }
+
+              // Clean Up
+              index = void 0;
+              length = void 0;
+              gradient = void 0;
+
+          }
+        });
+    });
             }
 
         });

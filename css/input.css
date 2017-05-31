@@ -1,7 +1,7 @@
 h1 {
     text-align: center;
-    font-size: 5.5em;
-    margin: 25px 0 10px 0;
+    font-size: 2.5em;
+    margin: 15px 0 10px 0;
     font-family: 'Playfair Display', serif;
     font-weight: bolder;
 }
@@ -14,7 +14,6 @@ h1 {
     position: absolute;
     left: 50px;
     width: 20%;
-
 }
 
 canvas {
@@ -42,4 +41,15 @@ button {
 
 #go {
     font-size: 2em;
+}
+
+
+#sine-waves {
+    position: absolute;
+    top: 485px;
+}
+
+#waves {
+    height: 240px;
+    background-color: #ccc;
 }

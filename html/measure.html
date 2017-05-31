@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="../css/normalize.css">
         <link rel="stylesheet" type="text/css" href="../css/measure.css">
         <script type='text/javascript' src='../js/persist-min.js'></script>
+        <script type='text/javascript' src='../js/sine-waves.js'></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type='text/javascript' src='../js/store.js'></script>
 
@@ -18,10 +19,9 @@
                 <div class="overlay"></div>
             </div>
             <div class="col">
-                <h1>Amplitude:</h1>
-                <h1 id="vertical-distance"></h1>
-                <h1>Wavelength:</h1>
-                <h1 id="horizontal-distance"></h1>
+                <h1>Type of Wave: <span id="wave-type"></span></h1>
+                <h1>Amplitude: <span id="vertical-distance"></span></h1>
+                <h1>Wavelength: <span id="horizontal-distance"></span></h1>
                 <h1 id="comparisons">Real Life Example = "A wave this high will be taller than Shaq"</h1>
                 <a href="index.html">
                     <div class="wrapper">
@@ -30,22 +30,77 @@
                         </button>
                     </div>
                 </a>
+                <div id="sine-waves">
+                    <canvas id="waves"></canvas>
+                </div>
             </div>
         </div>
     <script>
         var vert = store.get('vert');
         var hori = store.get('hori');
+        var type = store.get('type');
 
+        document.getElementById("wave-type").innerHTML = type + " Wave";
         document.getElementById("vertical-distance").innerHTML = vert + " m";
         document.getElementById("horizontal-distance").innerHTML = hori + " Hz";
+
+        $(".overlay").css("height", vert * 2);
 
         if (vert < 300) {
             document.getElementById("comparisons").innerHTML = "This wave is not bad";
         };
 
         if (vert > 300) {
-            document.getElementById("comparisons").innerHTML = "This is a fucking massive wave";
+            document.getElementById("comparisons").innerHTML = "This wave is massive";
         };
+
+                $(function(){
+          var waves = new SineWaves({
+            el: document.getElementById('waves'),
+
+            speed: 10,
+
+            width: function() {
+              return ($(window).width() / 2);
+            },
+
+            wavesWidth: '100%',
+
+            ease: 'Linear',
+
+            waves: [
+              {
+                timeModifier: 1,
+                lineWidth: 5,
+                amplitude: vert,
+                wavelength: hori,
+                segmentLength: 1,
+                // strokeStyle: 'rgba(255, 255, 255, 0.5)'
+              }
+            ],
+
+            initialize: function (){
+
+            },
+
+            resizeEvent: function() {
+              var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0);
+              gradient.addColorStop(0.5,"rgba(255, 255, 255, 0.5)");
+
+              var index = -1;
+              var length = this.waves.length;
+                while(++index < length){
+                this.waves[index].strokeStyle = gradient;
+              }
+
+              // Clean Up
+              index = void 0;
+              length = void 0;
+              gradient = void 0;
+
+          }
+        });
+    });
     </script>
     </body>
 </html>
